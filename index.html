@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Check whether two questions mean the same thing using Natural Language Processing">
+  <title>Quora Question Similarity Checker | NLP Analysis Tool</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Subtle background pattern -->
+  <div class="bg-pattern">
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
+  </div>
+
+  <main class="container">
+    <!-- Header Section -->
+    <header class="header">
+      <div class="badge">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+          <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+        </svg>
+        <span>NLP-Powered Analysis</span>
+      </div>
+      <h1 class="title">Quora Question <span class="text-gradient">Similarity Checker</span></h1>
+      <p class="subtitle">Check whether two questions mean the same thing using Natural Language Processing</p>
+    </header>
+
+    <!-- Input Section -->
+    <div class="input-section">
+      <div class="input-group">
+        <label class="label" for="question1">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
+          </svg>
+          Question 1
+        </label>
+        <textarea id="question1" class="input-question" placeholder="Enter Question 1"></textarea>
+        <p id="error1" class="error-message"></p>
+      </div>
+
+      <div class="input-group">
+        <label class="label" for="question2">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/>
+          </svg>
+          Question 2
+        </label>
+        <textarea id="question2" class="input-question" placeholder="Enter Question 2"></textarea>
+        <p id="error2" class="error-message"></p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-section">
+      <button id="compareBtn" class="btn-compare">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
+          <path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/>
+        </svg>
+        <span id="btnText">Compare Questions</span>
+        <div id="spinner" class="spinner hidden"></div>
+      </button>
+      <button id="clearBtn" class="btn-clear hidden">Clear All</button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="resultCard" class="result-card hidden">
+      <div class="result-header">
+        <div id="resultIcon" class="result-icon">
+          <!-- Icon will be inserted by JS -->
+        </div>
+        <div class="result-text">
+          <h2 id="resultTitle" class="result-title"></h2>
+          <p id="resultDescription" class="result-description"></p>
+        </div>
+      </div>
+
+      <!-- Confidence Meter -->
+      <div class="confidence-section">
+        <div class="confidence-header">
+          <span class="confidence-label">Similarity Confidence</span>
+          <span id="confidenceValue" class="confidence-value">0%</span>
+        </div>
+        <div class="confidence-bar">
+          <div id="confidenceFill" class="confidence-fill"></div>
+        </div>
+        <p class="confidence-note">Based on word overlap and semantic similarity analysis</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Built with NLP techniques • Inspired by Quora's duplicate question detection</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
