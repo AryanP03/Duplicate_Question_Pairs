@@ -9,7 +9,7 @@ An NLP-based Machine Learning web application that identifies whether two questi
 
 ## 🔗 Live Demo
 Check out the live application deployed on Render:  
-👉 **[Click Here to View App](https://quora-question-checker.onrender.com)** *(Note: Since this is hosted on a free tier, it may take 30-50 seconds to wake up if it hasn't been used recently.)*
+👉 **[Click Here to View App](https://quora-question-checker.onrender.com)** *(Note: Due to this is hosted on a free tier, it may take 30-50 seconds to wake up if it hasn't been used recently.)*
 
 ---
 
